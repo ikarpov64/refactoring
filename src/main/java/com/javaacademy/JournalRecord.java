@@ -1,21 +1,12 @@
 package com.javaacademy;
 
+import lombok.Builder;
+
+@Builder
 public class JournalRecord {
     private double garbageWeight;
     private Bottle bottle;
     private Cartoon cartoon;
-
-    public JournalRecord(Bottle bottle) {
-        this.bottle = bottle;
-    }
-
-    public JournalRecord(double garbageWeight) {
-        this.garbageWeight = garbageWeight;
-    }
-
-    public JournalRecord(Cartoon cartoon) {
-        this.cartoon = cartoon;
-    }
 
     @Override
     public String toString() {
