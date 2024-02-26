@@ -9,11 +9,11 @@ import lombok.experimental.FieldDefaults;
 @RequiredArgsConstructor
 @ToString(exclude = {"cityProducer"})
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Setter
 public class Bottle {
     @Getter
     final double volume;
     final String cityProducer;
-    @Setter
     double nestedVolume;
 
     public void addLiquid(double liquidVolume) {
