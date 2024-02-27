@@ -35,11 +35,20 @@ public class UtilizationFactory {
     public void refactorGarbage(Garbage[] garbageArray, BufferedWriter journal) {
         for (Garbage garbage : garbageArray) {
             switch (garbage.getGarbageType()) {
-                case GLASS ->
-                        journal.write(new JournalRecord(com.javaacademy.UtilizationFactory.refactorGlassGarbage(garbage)).toString());
-                case PAPER ->
-                        journal.write(new JournalRecord(com.javaacademy.UtilizationFactory.refactorPaperGarbage(garbage)).toString());
-                default -> journal.write(new JournalRecord(garbage.getWeight()).toString());
+                case GLASS -> journal.write(
+                        JournalRecord.builder()
+                                .bottle(UtilizationFactory.refactorGlassGarbage(garbage))
+                                .build()
+                                .toString());
+                case PAPER -> journal.write(
+                        JournalRecord.builder()
+                                .cartoon(UtilizationFactory.refactorPaperGarbage(garbage))
+                                .build()
+                                .toString());
+                default -> journal.write(
+                        JournalRecord.builder()
+                                .garbageWeight(garbage.getWeight())
+                                .toString());
             }
         }
     }
