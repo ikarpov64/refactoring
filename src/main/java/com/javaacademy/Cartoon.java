@@ -14,6 +14,6 @@ import lombok.ToString;
 @ToString
 public class Cartoon {
 
-    public double weight;
+    private double weight;
 
 }
