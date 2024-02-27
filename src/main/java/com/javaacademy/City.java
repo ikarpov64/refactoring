@@ -11,8 +11,8 @@ import lombok.*;
 @ToString(exclude = {"peopleCount"})
 public class City {
     @NonNull
-    public final String name;
-    public int peopleCount;
+    private final String name;
+    private int peopleCount;
 
     public Garbage[] createGarbage() {
         return new Garbage[] {
