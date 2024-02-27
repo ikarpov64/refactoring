@@ -1,17 +1,13 @@
 package com.javaacademy;
 
+import lombok.Getter;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+
+@Getter
+@RequiredArgsConstructor
 public enum GarbageType {
     PAPER("Бумага"), GLASS("Стекло"), MIXED("Смешанный мусор");
+    @NonNull
     private final String value;
-
-    GarbageType(String value) {
-        if (value == null) {
-            throw new NullPointerException("value is marked non-null, but is null");
-        }
-        this.value = value;
-    }
-
-    public String getValue() {
-        return value;
-    }
 }
