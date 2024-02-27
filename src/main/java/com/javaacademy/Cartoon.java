@@ -13,7 +13,5 @@ import lombok.ToString;
 @Setter
 @ToString
 public class Cartoon {
-
     private double weight;
-
 }

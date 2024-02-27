@@ -48,6 +48,7 @@ public class UtilizationFactory {
                 default -> journal.write(
                         JournalRecord.builder()
                                 .garbageWeight(garbage.getWeight())
+                                .build()
                                 .toString());
             }
         }
